@@ -7,6 +7,8 @@
 
 import Foundation
 import Combine
+
+#if os(iOS)
 import UIKit
 
 /// do not use from code but xib or storyboard.
@@ -102,3 +104,6 @@ class DateTextField: UITextField {
         selectingDateRelay.send(nil)
     }
 }
+
+#elseif os(macOS)
+#endif

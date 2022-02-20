@@ -6,6 +6,8 @@
 //
 
 import Foundation
+
+#if os(iOS)
 import UIKit
 
 public class FMButton: UIButton {
@@ -19,3 +21,6 @@ public extension FMButton {
         return button
     }
 }
+
+#elseif os(macOS)
+#endif
