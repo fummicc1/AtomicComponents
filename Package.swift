@@ -9,8 +9,13 @@ let package = Package(
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
-            name: "AtomicComponents",
-            targets: ["AtomicComponents"]),
+            name: "AtomicComponents-UIKit",
+            targets: ["AtomicComponents-UIKit"]
+        ),
+        .library(
+            name: "AtomicComponents-SwiftUI",
+            targets: ["AtomicComponents-SwiftUI"]
+        )
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -20,10 +25,22 @@ let package = Package(
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
-            name: "AtomicComponents",
-            dependencies: []),
+            name: "AtomicComponents-UIKit",
+            dependencies: [],
+            path: "Sources/UIKit"
+        ),
         .testTarget(
-            name: "AtomicComponentsTests",
-            dependencies: ["AtomicComponents"]),
+            name: "AtomicComponents-UIKit-Tests",
+            dependencies: ["AtomicComponents-UIKit"]
+        ),
+        .target(
+            name: "AtomicComponents-SwiftUI",
+            dependencies: [],
+            path: "Sources/SwiftUI"
+        ),
+        .testTarget(
+            name: "AtomicComponents-SwiftUI-Tests",
+            dependencies: ["AtomicComponents-SwiftUI"]
+        )
     ]
 )
