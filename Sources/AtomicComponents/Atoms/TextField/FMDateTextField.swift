@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 import Combine
 
 #if os(iOS)
@@ -21,7 +22,7 @@ class DateTextField: UITextField {
     }
     private var cancellables: Set<AnyCancellable> = []
     @IBInspectable private var timeContains: Bool = false
-    @IBInspectable private var dateContains: Bool = false
+    @IBInspectable private var dateContains: Bool = true
     var initialDate: Date? {
         didSet {
             selectingDateRelay.send(initialDate)

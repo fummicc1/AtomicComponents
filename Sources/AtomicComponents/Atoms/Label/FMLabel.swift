@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import SwiftUI
+
 #if os(iOS)
 import UIKit
 
@@ -25,6 +27,29 @@ public extension FMLabel {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .preferredFont(forTextStyle: .title1)
         return label
+    }
+}
+
+struct FMLabel_Title_Preview: PreviewProvider {
+
+    static var previews: some View {
+        let view = FMLabel.title
+        view.text = "Hello, Previews!"
+        view.sizeToFit()
+        return UIViewPreviewWrapper(view: view)
+            .previewLayout(.sizeThatFits)
+    }
+}
+
+struct FMLabel_Body_Preview: PreviewProvider {
+
+    static var previews: some View {
+        let view = FMLabel.body
+        view.text = "Hello, Previews!"
+        view.sizeToFit()
+        return UIViewPreviewWrapper(view: view)
+            .previewLayout(.sizeThatFits)
+            
     }
 }
 
@@ -58,5 +83,26 @@ public extension FMLabel {
         return label
     }
 }
+
+struct FMLabel_Title_Preview: PreviewProvider {
+    static var previews: some View {
+        let view = FMLabel.title
+        view.stringValue = "Hello, Previews!"
+        view.sizeToFit()
+        return NSViewPreviewWrapper(view: view)
+            .previewLayout(.sizeThatFits)
+    }
+}
+
+struct FMLabel_Body_Preview: PreviewProvider {
+    static var previews: some View {
+        let view = FMLabel.body
+        view.stringValue = "Hello, Previews!"
+        view.sizeToFit()
+        return NSViewPreviewWrapper(view: view)
+            .previewLayout(.sizeThatFits)
+    }
+}
+
 
 #endif
