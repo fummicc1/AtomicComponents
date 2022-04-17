@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct FMText: View {
+public struct FMText: View {
 
     public init(
         text: Binding<String>,
@@ -22,7 +22,7 @@ struct FMText: View {
     public var font: FMFont
     public var padding: EdgeInsets
 
-    var body: some View {
+    public var body: some View {
         Text(text)
             .modifier(FMFontModifier(font: font))
             .padding(padding)
