@@ -6,8 +6,8 @@ public struct FMButton: View {
     public init(
         title: String,
         padding: EdgeInsets = .init(top: 8, leading: 12, bottom: 8, trailing: 12),
-        foregroundColor: Color = Color(uiColor: UIColor.label),
-        backgroundColor: Color = Color(uiColor: UIColor.systemBackground),
+        foregroundColor: Color,
+        backgroundColor: Color,
         cornerRadius: CGFloat = 12,
         shadowRadius: CGFloat? = nil,
         shadowColor: Color? = nil,
@@ -74,7 +74,11 @@ public extension FMButton {
 
 struct SwiftUIView_Previews: PreviewProvider {
     static var previews: some View {
-        FMButton(title: "Hello World!")
+        FMButton(
+            title: "Hello World!",
+            foregroundColor: .label,
+            backgroundColor: .background
+        )
             .previewLayout(.sizeThatFits)
     }
 }
